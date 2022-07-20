@@ -1,0 +1,122 @@
+[
+    {
+        "userName": "fleatherbarrow0",
+        "fullName": "Forrester Leatherbarrow",
+        "email": "fleatherbarrow0@linkedin.com",
+        "password": "yZkj0vxW",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/64/70/OBzpm2.jpg",
+        "gender": "Male",
+        "dateOfBirth": "09/12/1968",
+        "height": 185,
+        "character": "serious"
+    },
+    {
+        "userName": "tbarbey1",
+        "fullName": "Tedi Barbey",
+        "email": "tbarbey1@google.ru",
+        "password": "ZltL2n5K4l8A",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/22/17/VCP794.jpg",
+        "gender": "Male",
+        "dateOfBirth": "05/12/1962",
+        "height": 175,
+        "character": "serious"
+    },
+    {
+        "userName": "kmaccurley2",
+        "fullName": "Kaela MacCurley",
+        "email": "kmaccurley2@so-net.ne.jp",
+        "password": "7PAHCUZThE",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/8/16/KYo5VU.jpg",
+        "gender": "Female",
+        "dateOfBirth": "04/10/1977",
+        "height": 167,
+        "character": "serious"
+    },
+    {
+        "userName": "msharrem3",
+        "fullName": "Minerva Sharrem",
+        "email": "msharrem3@blog.com",
+        "password": "GqyH4yDNNs9",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/45/57/GfSKCN.jpg",
+        "gender": "Female",
+        "dateOfBirth": "11/12/1986",
+        "height": 161,
+        "character": "humorous"
+    },
+    {
+        "userName": "asuermeier4",
+        "fullName": "Agosto Suermeier",
+        "email": "asuermeier4@wsj.com",
+        "password": "4f5Sc2t",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/25/59/vCP01d.jpg",
+        "gender": "Female",
+        "dateOfBirth": "06/21/1978",
+        "height": 166,
+        "character": "serious"
+    },
+    {
+        "userName": "ltarburn5",
+        "fullName": "Lemuel Tarburn",
+        "email": "ltarburn5@goo.gl",
+        "password": "fjUkwS",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/44/11/H4UiVu.jpg",
+        "gender": "Male",
+        "dateOfBirth": "07/11/1969",
+        "height": 176,
+        "character": "humorous"
+    },
+    {
+        "userName": "vhuggins6",
+        "fullName": "Virgie Huggins",
+        "email": "vhuggins6@weebly.com",
+        "password": "j08jsErbjOq",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/3/97/1eytbX.jpg",
+        "gender": "Female",
+        "dateOfBirth": "03/10/1995",
+        "height": 170,
+        "character": "serious"
+    },
+    {
+        "userName": "ncampany7",
+        "fullName": "Noni Campany",
+        "email": "ncampany7@bbb.org",
+        "password": "EW8zna",
+        "role": "user",
+        "imageUrl": "https://images5.alphacoders.com/823/823118.jpg",
+        "gender": "Female",
+        "dateOfBirth": "10/16/1991",
+        "height": 165,
+        "character": "humorous"
+    },
+    {
+        "userName": "ssatch8",
+        "fullName": "Skip Satch",
+        "email": "ssatch8@amazon.co.jp",
+        "password": "ggrc8b7",
+        "role": "admin",
+        "imageUrl": "https://wallpaperboat.com/wp-content/uploads/2020/06/14/46001/tom-holland-06.jpg",
+        "gender": "Male",
+        "dateOfBirth": "06/19/1996",
+        "height": 170,
+        "character": "humorous"
+    },
+    {
+        "userName": "gbathoe9",
+        "fullName": "Guglielmo Bathoe",
+        "email": "gbathoe9@thetimes.co.uk",
+        "password": "K1yRZJuA",
+        "role": "user",
+        "imageUrl": "https://mcdn.wallpapersafari.com/medium/36/50/xpJfWS.jpg",
+        "gender": "Male",
+        "dateOfBirth": "11/11/1967",
+        "height": 187,
+        "character": "humorous"
+    }
+]
