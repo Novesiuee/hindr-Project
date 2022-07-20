@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Match.belongsTo(models.Preferences)
+      Match.belongsTo(models.User)
     }
   }
   Match.init({
