@@ -57,7 +57,6 @@ class Controller {
                 email : email}
         })
         .then(user=>{
-            console.log(user);
             if(!user) {
                 
                 const error = "Account is not found!"
@@ -65,6 +64,8 @@ class Controller {
             } else {
                 const validPassword = bcrypt.compareSync(password, user.password)
                     if(validPassword){
+
+                        req.session.role = user.role
                         return res.redirect('homepage') //belum ada
                     } else{
                         const error = "Wrong Password!"
@@ -76,6 +77,16 @@ class Controller {
             res.send(err) // sementara
         ])
 
+    }
+
+    static logout(req, res) {
+        req.session.destroy((err) =>{
+            if(err) {
+                res.send(err)
+            } else {
+                res.redirect('/login')
+            }
+        }) 
     }
 }
 
