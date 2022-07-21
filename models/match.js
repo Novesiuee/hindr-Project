@@ -11,21 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Match.belongsTo(models.Preference)
       Match.belongsTo(models.User)
+      
     }
   }
   Match.init({
-    MatchId:{
-      type:DataTypes.INTEGER,
+    MatchId: {
+      type: DataTypes.INTEGER,
       references: {
-        model : 'Preferences'
+        model: 'Users'
       }
     },
-    UserId:{
-      type:DataTypes.INTEGER,
+    UserId: {
+      type: DataTypes.INTEGER,
       references: {
-        model : 'Users'
+        model: 'Users'
       }
     },
   }, {

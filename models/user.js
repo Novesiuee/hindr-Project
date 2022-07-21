@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasOne(models.Preference)
+      User.hasOne(models.Match)
       User.hasMany(models.Match)
     }
   }

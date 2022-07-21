@@ -10,7 +10,6 @@ class Controller {
     }
 
     static postRegister(req, res) {
-        console.log(req.body)
         const { 
             fullName, 
             email, 
@@ -32,8 +31,6 @@ class Controller {
             dateOfBirth, 
             height, 
             character, 
-            createdAt : new Date(), 
-            updatedAt : new Date(), 
             userName 
 
          })
@@ -54,12 +51,15 @@ class Controller {
     static postLogin(req, res) {
         //ngecek email dan dan password udah ada apa belum
         const { email, password } = req.body
-
+   
         User.findOne({
-            where : email
+            where : {
+                email : email}
         })
         .then(user=>{
+            console.log(user);
             if(!user) {
+                
                 const error = "Account is not found!"
                 res.redirect(`/login?error=${error}`)
             } else {
