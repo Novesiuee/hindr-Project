@@ -8,8 +8,13 @@ const port = 3000
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended : true}))
 
+
+// buat ngetes
+// app.get('/', (req, res) => {
+//   res.render('register-form')
+// })
 app.get('/', (req, res) => {
-  res.render('register-form')
+  res.render('login-form')
 })
 
 
