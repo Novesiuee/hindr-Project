@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
+const router = require('./routers/index')
 
 
 //set up ejs
@@ -13,9 +13,7 @@ app.use(express.urlencoded({extended : true}))
 // app.get('/', (req, res) => {
 //   res.render('register-form')
 // })
-app.get('/', (req, res) => {
-  res.render('login-form')
-})
+app.use(router)
 
 
 
