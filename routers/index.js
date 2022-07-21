@@ -29,10 +29,10 @@ router.use(loggedIn)
 
 //user endpoint
 router.get('/hindr/home', Controller.homePage)
-router.get('/hindr/preferences/:id', Controller.formPreference)
-router.post('/hindr/preferences/:id', Controller.postPreference)
-router.get('/hindr/match', Controller.match)
-router.post('/hindr/match',Controller.postMatch)
+router.get('/hindr/preferences/:id', Controller.formPreference) //  ok
+router.post('/hindr/preferences/:id', Controller.postPreference) //  ok
+router.get('/hindr/match/:id', Controller.match)
+router.post('/hindr/match/:id',Controller.postMatch)
 router.get('/hindr/match/:id', Controller.profileById)
 router.get('/hindr/user/edit/:id', Controller.formEditById)
 router.post('/hindr/user/edit/:id', Controller.postEditById)
