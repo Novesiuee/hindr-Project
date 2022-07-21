@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Preference.belongsTo(models.User)
-      Preference.hasOne(models.Match)
     }
   }
   Preference.init({
