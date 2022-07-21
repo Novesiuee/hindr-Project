@@ -16,18 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Match.init({
-    MatchId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Users'
-      }
-    },
-    UserId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Users'
-      }
-    },
+    MatchId : DataTypes.INTEGER,
+    UserId:DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Match',
