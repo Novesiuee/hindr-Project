@@ -1,7 +1,7 @@
 const loggedIn = function (req, res, next) {
     if (!req.session.role) {
         const error = 'Login First!'
-        res.redirect(`/login?error${error}`)
+        res.redirect(`/hindr/login?error=${error}`)
     } else {
         if (req.session.role === 'admin') {
             res.redirect('/crud-system')
@@ -13,8 +13,7 @@ const loggedIn = function (req, res, next) {
 
 const admin = function (req, res, next) {
     if (req.session.role !== 'admin') {
-        const message = `You don't have access!`
-        res.redirect(`/home?error${message}`)
+        res.redirect(`/hindr/home`)
     } else {
         next()
     }

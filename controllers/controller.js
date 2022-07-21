@@ -1,5 +1,6 @@
 const { Match, Preference, User } = require('../models')
 const bcrypt = require('bcryptjs')
+const {formattedAge} = require('../helpers/index')
 
 class Controller {
 
@@ -100,39 +101,45 @@ class Controller {
         }) 
     }
 
-    static homePage(){
+    static homePage(req, res){
+       User.findAll({include: Preference})
+       .then((user) =>{
+        res.render('home', {user, formattedAge})
+       })
+       .catch((err) =>{
+        res.send(err)
+       })
+    }
+
+    static formPreference(req, res){
+        res.render('formPreference')
+    }
+
+    static postPreference(req, res){
 
     }
 
-    static formPreference(){
+    static match(req, res){
 
     }
 
-    static postPreference(){
-
-    }
-
-    static match(){
-
-    }
-
-    static postMatch(){
+    static postMatch(req, res){
 
     }
     
-    static profileById(){
+    static profileById(req, res){
 
     }
 
-    static formEditById(){
+    static formEditById(req, res){
 
     }
 
-    static postEditById(){
+    static postEditById(req, res){
 
     }
 
-    static deleteById(){
+    static deleteById(req, res){
 
     }
 }
