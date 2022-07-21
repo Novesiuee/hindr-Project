@@ -4,7 +4,7 @@ const {loggedIn, admin} = require('../middlewares/auth')
 
 
 //landing page
-
+router.get('/', Controller.landingPage)
 router.get('/hindr', Controller.landingPage)
 
 
@@ -28,20 +28,20 @@ router.get('/hindr/logout', Controller.logout)
 router.use(loggedIn)
 
 //user endpoint
-router.get('/hindr/home', Controller.homePage)
+router.get('/hindr/home/:id', Controller.homePage)
 router.get('/hindr/preferences/:id', Controller.formPreference) //  ok
 router.post('/hindr/preferences/:id', Controller.postPreference) //  ok
-router.get('/hindr/match/:id', Controller.match)
-router.post('/hindr/match/:id',Controller.postMatch)
-router.get('/hindr/match/:id', Controller.profileById)
+router.get('/hindr/match/:id', Controller.match) //  ok
+router.post('/hindr/match/:matchId/user/:id',Controller.postMatch) //  ok
+router.get('/hindr/match/profile/:id', Controller.profileById) //  ok
 router.get('/hindr/user/edit/:id', Controller.formEditById)
 router.post('/hindr/user/edit/:id', Controller.postEditById)
-router.get('/hindr/user/delete/:id', Controller.deleteById)
+
 
 //session admin
 router.use(admin)
 
 
 //admin endpoint
-
+router.get('/hindr/admin/deleteUser', admin,Controller.deleteUserByAdmin)
 module.exports = router

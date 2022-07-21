@@ -59,7 +59,7 @@
 
 <body>
     <section class="h-100 h-custom gradient-custom-2">
-        <form action="/hindr/preferences/:id" method="post">
+        <form action="/hindr/preferences/<%=id%>" method="post">
             <div class="container py-5 h-100">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-7">
@@ -77,7 +77,7 @@
                                                             <option value ="21-30">21-30</option>
                                                             <option value="31-40">31-40</option>
                                                             <option value="41-50">41-50</option>
-                                                            <option>>50</option>
+                                                            <option  value="50-70">50-70</option>
                                                           </select>
                                                           
                                                  
@@ -95,11 +95,11 @@
                                                     <div class="form-outline">
                                                         <label class="form-label" for="form3Examplev4">seekingHeight</label>
                                                         <select  name="seekingHeight" class="form-select">
-                                                            <option values="<=150"><=150</option>
-                                                            <option values="<=160"><=160</option>
-                                                            <option values="<=170"><=170</option>
-                                                            <option values="<=180"><=180</option>
-                                                            <option values=">180">>180</option>
+                                                            <option values="150">150</option>
+                                                            <option values="160">160</option>
+                                                            <option values="170">170</option>
+                                                            <option values="180">180</option>
+                                                            <option values="180">180</option>
                                                           </select>
                                                     </div>
                                                     <div class="form-outline">
@@ -120,7 +120,9 @@
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-info btn-lg"
-                                            data-mdb-ripple-color="dark">Register</button>
+                                            data-mdb-ripple-color="dark">
+                                            Submit
+                                        </button>
                                         </div>
                                     </div>
                                 </div>
