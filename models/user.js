@@ -15,6 +15,23 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Preference)
       User.hasMany(models.Match)
     }
+
+    get formattedYMD() {
+      var date = new Date(this.dateOfBirth);
+      // var daydata = ("0" + date.getDate()).slice(-2)
+      // var monthdata = ("0" + (date.getMonth() + 1)).slice(-2)
+      // var yeardata = date.getFullYear();
+      let daydata = date.getDate()
+      let monthdata = date.getMonth()
+
+      return {month: monthdata, day: daydata}
+    }
+
+    get tanggal() {
+      return this.dateOfBirth.toISOString().slice(0,10)
+    }
+ 
+
   }
   User.init({
     fullName:
@@ -100,7 +117,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     dateOfBirth:
     {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
       validate: {
         notEmpty: {
