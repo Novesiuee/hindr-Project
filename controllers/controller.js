@@ -3,6 +3,50 @@ const bcrypt = require('bcryptjs')
 
 class Controller {
 
+    
+
+    static formRegister(req, res) {
+        res.render('register-form')
+    }
+
+    static postRegister(req, res) {
+        console.log(req.body)
+        const { 
+            fullName, 
+            email, 
+            password, 
+            role, 
+            imageUrl, 
+            gender, 
+            dateOfBirth, 
+            height, 
+            character, 
+            userName } = req.body
+        User.create({ 
+            fullName, 
+            email, 
+            password, 
+            role, 
+            imageUrl, 
+            gender, 
+            dateOfBirth, 
+            height, 
+            character, 
+            createdAt : new Date(), 
+            updatedAt : new Date(), 
+            userName 
+
+         })
+        .then((_)=>{
+
+            res.redirect('/login') //nyuruh user nyoba login 
+
+        })
+        .catch(err=>{
+            res.send(err) //sementara 
+        })
+    }
+    
     static formLogin(req, res) {
         res.render('login-form')
     }
@@ -15,14 +59,17 @@ class Controller {
             where : email
         })
         .then(user=>{
-            if(user){
+            if(!user) {
+                const error = "Account is not found!"
+                res.redirect(`/login?error=${error}`)
+            } else {
                 const validPassword = bcrypt.compareSync(password, user.password)
-
-                if(validPassword){
-                    return res.redirect('homepage') //belum ada
-                } else{
-                    return res.redirect('register-form') // kalo ternyata gaada akun, bikin akun baru aja 
-                }
+                    if(validPassword){
+                        return res.redirect('homepage') //belum ada
+                    } else{
+                        const error = "Wrong Password!"
+                        return res.redirect(`/login?error=${error}`) // wrong password
+                    }
             }
         })
         .catch(err=>[
@@ -30,24 +77,6 @@ class Controller {
         ])
 
     }
-
-    static formRegister(req, res) {
-        res.render('register-form')
-    }
-
-    static postRegister(req, res) {
-        const { fullName, email, password, role, imageUrl, gender, dateOfBirth, height, character, userName } = req.body
-        User.create({ fullName, email, password, role, imageUrl, gender, dateOfBirth, height, character, userName })
-        .then(newUser=>{
-            res.redirect('login-form') //nyuruh user nyoba login 
-
-        })
-        .catch(err=>{
-            res.send(err) //sementara 
-        })
-    }
-
-
 }
 
 module.exports = Controller

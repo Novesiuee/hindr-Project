@@ -59,6 +59,7 @@
 
 <body>
     <section class="h-100 h-custom gradient-custom-2">
+      <form action="/register" method="post">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12">
@@ -70,21 +71,19 @@
                         <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
       
                       
-      
+                       
                         <div class="row">
                           <div class="col-md-6 mb-4 pb-2">
-      
                             <div class="form-outline">
-                              <input type="text" id="form3Examplev2" class="form-control form-control-lg" placeholder="Type here..." />
-                              <label class="form-label" for="form3Examplev2">Username</label>
+                              <input type="text" id="form3Examplev2" class="form-control form-control-lg" placeholder="Type here..." name="userName"/>
+                              <label class="form-label" for="form3Examplev2" >Username</label>
                             </div> 
-      
                           </div>
                           <div class="col-md-6 mb-4 pb-2">
       
                             <div class="form-outline">
-                              <input type="text" id="form3Examplev3" class="form-control form-control-lg" placeholder="Type here..." />
-                              <label class="form-label" for="form3Examplev3">Full Name</label>
+                              <input type="text" id="form3Examplev3" class="form-control form-control-lg" placeholder="Type here..." name="fullName"/>
+                              <label class="form-label" for="form3Examplev3" >Full Name</label>
                             </div>
       
                           </div>
@@ -93,8 +92,8 @@
       
                         <div class="mb-4 pb-2">
                           <div class="form-outline">
-                            <input type="text" id="form3Examplev4" class="form-control form-control-lg" placeholder="Type here..." />
-                            <label class="form-label" for="form3Examplev4">Email</label>
+                            <input type="text" id="form3Examplev4" class="form-control form-control-lg" placeholder="Type here..." name="email"/>
+                            <label class="form-label" for="form3Examplev4" >Email</label>
                           </div>
                         </div>
       
@@ -102,16 +101,16 @@
                           <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
       
                             <div class="form-outline">
-                              <input type="text" id="form3Examplev5" class="form-control form-control-lg" />
-                              <label class="form-label" for="form3Examplev5">Password</label>
+                              <input type="password" id="form3Examplev5" class="form-control form-control-lg" name="password" placeholder="Type here..."/>
+                              <label class="form-label" for="form3Examplev5" >Password</label>
                             </div>
       
                           </div>
                           <div class="col-md-6">
                           
-                            <select class="select">
-                              <option value="1">Admin</option>
-                              <option value="2">User</option>
+                            <select class="select" name="role">
+                              <option value="admin">Admin</option>
+                              <option value="user">User</option>
                              
                             </select>
                             <br>
@@ -128,8 +127,8 @@
       
                         <div class="mb-4 pb-2">
                           <div class="form-outline form-white">
-                            <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea2">Image</label>
+                            <input type="text" id="form3Examplea2" class="form-control form-control-lg" name="imageUrl" placeholder="Type here..."/>
+                            <label class="form-label" for="form3Examplea2" >Image</label>
                           </div>
                         </div>
                         
@@ -138,8 +137,8 @@
                             <div class="col-md-7 mb-4 pb-2">
         
                               <div class="form-outline form-white">
-                                <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
-                                <label class="form-label" for="form3Examplea5">Gender</label>
+                                <input type="text" id="form3Examplea5" class="form-control form-control-lg"  name="gender" placeholder="Type here..."/>
+                                <label class="form-label" for="form3Examplea5" >Gender</label>
                               </div>
         
                             </div>
@@ -147,8 +146,8 @@
 
                         <div class="mb-4 pb-2">
                           <div class="form-outline form-white">
-                            <input type="date" id="form3Examplea3" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea3">Additional Information</label>
+                            <input type="date" id="form3Examplea3" class="form-control form-control-lg" name="dateOfBirth" placeholder="Type here..."/>
+                            <label class="form-label" for="form3Examplea3">Date of Birth</label>
                           </div>
                         </div>
       
@@ -156,7 +155,7 @@
       
                         <div class="mb-4 pb-2">
                           <div class="form-outline form-white">
-                            <input type="number" id="form3Examplea6" class="form-control form-control-lg" />
+                            <input type="number" id="form3Examplea6" class="form-control form-control-lg" name="height" placeholder="Type here..."/>
                             <label class="form-label" for="form3Examplea6">Height</label>
                           </div>
                         </div>
@@ -164,14 +163,14 @@
           
                         <div class="mb-4">
                           <div class="form-outline form-white">
-                            <input type="textarea" id="form3Examplea9" class="form-control form-control-lg" />
+                            <input type="textarea" id="form3Examplea9" class="form-control form-control-lg" name="character" placeholder="Type here..."/>
                             <label class="form-label" for="form3Examplea9">Character</label>
                           </div>
                         </div>
       
                   
       
-                        <button type="button" class="btn btn-light btn-lg"
+                        <button type="submit" class="btn btn-light btn-lg"
                           data-mdb-ripple-color="dark">Register</button>
       
                       </div>
@@ -182,6 +181,7 @@
             </div>
           </div>
         </div>
+      </form>
       </section>
 </body>
 
