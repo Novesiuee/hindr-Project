@@ -20,4 +20,4 @@ const admin = function (req, res, next) {
     }
 }
 
-module.export = {loggedIn, admin}
+module.exports = {loggedIn, admin}

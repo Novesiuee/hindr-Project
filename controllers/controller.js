@@ -3,13 +3,17 @@ const bcrypt = require('bcryptjs')
 
 class Controller {
 
-    
+    static landingPage(req,res){
+        res.render('landing-page')
+    }
 
     static formRegister(req, res) {
-        res.render('register-form')
+        const {error} = req.query
+        res.render('register-form', {error})
     }
 
     static postRegister(req, res) {
+    
         const { 
             fullName, 
             email, 
@@ -36,11 +40,18 @@ class Controller {
          })
         .then((_)=>{
 
-            res.redirect('/login') //nyuruh user nyoba login 
+            res.redirect('/hindr/login') //nyuruh user nyoba login 
 
         })
         .catch(err=>{
-            res.send(err) //sementara 
+            if(err.name==='SequelizeValidationError'){
+                // console.log(err);
+                err = err.errors.map(el=>el.message)
+                res.redirect(`/hindr/register?error=${err}`)
+            }else{
+                res.send(err)
+            }
+            // res.send(err)
         })
     }
     
@@ -60,7 +71,7 @@ class Controller {
             if(!user) {
                 
                 const error = "Account is not found!"
-                res.redirect(`/login?error=${error}`)
+                res.redirect(`/hindr/login?error=${error}`)
             } else {
                 const validPassword = bcrypt.compareSync(password, user.password)
                     if(validPassword){
@@ -69,7 +80,7 @@ class Controller {
                         return res.redirect('homepage') //belum ada
                     } else{
                         const error = "Wrong Password!"
-                        return res.redirect(`/login?error=${error}`) // wrong password
+                        return res.redirect(`/hindr/login?error=${error}`) // wrong password
                     }
             }
         })
@@ -84,9 +95,45 @@ class Controller {
             if(err) {
                 res.send(err)
             } else {
-                res.redirect('/login')
+                res.redirect('/hindr/login')
             }
         }) 
+    }
+
+    static homePage(){
+
+    }
+
+    static formPreference(){
+
+    }
+
+    static postPreference(){
+
+    }
+
+    static match(){
+
+    }
+
+    static postMatch(){
+
+    }
+    
+    static profileById(){
+
+    }
+
+    static formEditById(){
+
+    }
+
+    static postEditById(){
+
+    }
+
+    static deleteById(){
+
     }
 }
 
