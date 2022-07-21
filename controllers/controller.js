@@ -2,7 +2,7 @@ const { Match, Preference, User } = require('../models')
 const bcrypt = require('bcryptjs')
 const { formattedAge, formatDate} = require('../helpers/index')
 const { Op } = require('sequelize')
-var getSign = require('horoscope').getSign;
+const horoscope= require('horoscope');
 
 
 class Controller {
@@ -83,7 +83,11 @@ class Controller {
                     if (validPassword) {
 
                         req.session.role = user.role
-                        return res.redirect(`/hindr/home/${id}`)
+                        if(req.session.role === 'admin'){
+                            return res.redirect(`/hindr/admin/delete`)
+                        } else{
+                            return res.redirect(`/hindr/home/${id}`)
+                        }
                     } else {
                         const error = "Wrong Password!"
                         return res.redirect(`/hindr/login?error=${error}`) // wrong password
@@ -101,8 +105,8 @@ class Controller {
         
         User.findOne({ where: { id: id }, include: Preference })
             .then((user) => {
-     
-                res.render('home', { user, formattedAge, formatDate })
+                const horos = horoscope.getSign({month:user.dateOfBirth.getMonth(), day:user.dateOfBirth.getDate()})
+                res.render('home', { user, formattedAge, formatDate, horos})
             })
             .catch((err) => {
                 res.send(err)
@@ -274,10 +278,19 @@ class Controller {
 
     static deleteUserByAdmin(req,res){
         User.findAll()
-        .then(result=>{
-            res.render('allUser', {result})
+        .then(user=>{
+            res.render('allUser', {user})
         })
         .catch(err=>res.send(err))
+    }
+
+    static deleteUser(req, res) {
+        User.destroy({where : {id:req.params.id}})
+        .then(user=>{
+            res.redirect('/hindr/admin/delete')
+        })
+        .catch(err=>res.send(err))
+
     }
 
 

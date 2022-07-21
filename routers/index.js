@@ -43,5 +43,6 @@ router.use(admin)
 
 
 //admin endpoint
-router.get('/hindr/admin/deleteUser', admin,Controller.deleteUserByAdmin)
+router.get('/hindr/admin/delete', Controller.deleteUserByAdmin)
+router.get('/hindr/admin/delete/:id', Controller.deleteUser)
 module.exports = router
