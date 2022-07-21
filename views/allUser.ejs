@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AllUser</title>
 </head>
 <body>
-a
+    <h1>CRUD SYSTEM</h1>
+    <table border="1px">
+       <thead>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>ImageUrl</th>
+        <th>userName</th>
+        <th>action</th>
+       </thead>
+       <tbody>
+        <% user.forEach(el => { %>
+        <tr>
+            <td><%=  el.fullName%></td>
+            <td><%=  el.email%></td>
+            <td><%=  el.gender%></td>
+            <td><%=  el.imageUrl%></td>
+            <td><%=  el.userName%></td>
+            <td>
+                <a href="/hindr/admin/delete/<%= el.id %>">Delete</a>
+            </td>
+        </tr>
+        <% }) %>
+       </tbody>
+    </table>
 </body>
 </html>

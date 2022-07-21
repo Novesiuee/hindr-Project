@@ -21,10 +21,9 @@ module.exports = (sequelize, DataTypes) => {
       // var daydata = ("0" + date.getDate()).slice(-2)
       // var monthdata = ("0" + (date.getMonth() + 1)).slice(-2)
       // var yeardata = date.getFullYear();
-      let daydata = date.getDate()
-      let monthdata = date.getMonth()
+      let yeardata = date.getFullYear()
 
-      return {month: monthdata, day: daydata}
+      return yeardata
     }
 
     get tanggal() {
