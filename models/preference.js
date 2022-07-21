@@ -15,11 +15,71 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Preference.init({
-    seekingAge: DataTypes.INTEGER,
-    seekingGender: DataTypes.STRING,
-    seekingHeight: DataTypes.INTEGER,
-    seekingCharacter: DataTypes.STRING,
-    seekingRelationshipType: DataTypes.STRING,
+    seekingAge: 
+    {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Age preference cannot be empty'
+        },
+        notNull: {
+          msg: 'Age preference cannot be empty'
+        }
+      }
+    },
+    seekingGender: 
+    {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Gender preference cannot be empty'
+        },
+        notNull: {
+          msg: 'Gender preference cannot be empty'
+        }
+      }
+    },
+    seekingHeight:
+    {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Height preference cannot be empty'
+        },
+        notNull: {
+          msg: 'Height preference cannot be empty'
+        }
+      }
+    },
+    seekingCharacter: 
+    {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Character preference cannot be empty'
+        },
+        notNull: {
+          msg: 'Character preference cannot be empty'
+        }
+      }
+    },
+    seekingRelationshipType: 
+    {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Relationship type preference cannot be empty'
+        },
+        notNull: {
+          msg: 'Relationship type preference cannot be empty'
+        }
+      }
+    },
     UserId: DataTypes.INTEGER
   }, {
     sequelize,

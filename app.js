@@ -4,10 +4,11 @@ const session = require('express-session')
 const port = 3000
 const router = require('./routers/index')
 
-
+app.use(express.static('public'))
 //set up ejs
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended : true}))
+
 
 app.use(session({
   secret : 'its secret',
