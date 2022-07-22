@@ -277,7 +277,7 @@ class Controller {
     // }
 
     static deleteUserByAdmin(req,res){
-        User.findAll()
+        User.findAll({order : [['fullName']]})
         .then(user=>{
             res.render('allUser', {user})
         })
